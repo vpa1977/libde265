@@ -80,7 +80,8 @@ if (${TESTS})
 enable_testing()
 find_package(GTest REQUIRED)
 
-add_executable(test_libde265 test/test_bitstream.cc)
+add_executable(test_libde265 test/test_bitstream.cc \
+  test/test_cabac.cc)
 target_link_libraries(test_libde265 GTest::gtest GTest::gtest_main de265)
 
 add_test(all test_libde265)
